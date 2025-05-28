@@ -12,6 +12,13 @@ export interface SearchEngine {
 
 export const SEARCH_ENGINES: SearchEngine[] = [
   {
+    id: "google",
+    name: "Google",
+    url: "https://www.google.com/search?q={{query}}",
+    icon: "🌍",
+    description: "General web search (Google)",
+  },
+  {
     id: "googleScholar",
     name: "Google Scholar",
     url: "https://scholar.google.com/scholar?q={{query}}",
@@ -127,6 +134,41 @@ export class ReaderPopupFactory {
         }),
       );
     });
+
+    // Motor personalizado SOLO si hay DOI
+    const customPrefix = getPref("customEngine.prefix");
+    const doiMatch = (selectedText || "").match(/10\.[0-9]{4,9}\/[\w.()\-;\/:%]+/i);
+    if (customPrefix && customPrefix.trim() && doiMatch) {
+      const customButton = ztoolkit.UI.createElement(doc, "button", {
+        namespace: "html",
+        id: makeId(`search-custom`),
+        classList: ["toolbar-button", "wide-button"], // igual que los otros
+        properties: {
+          innerHTML: `🌐 Motor personalizado`,
+          title: `Buscar usando el motor personalizado: ${customPrefix}`,
+        },
+        styles: {
+          marginTop: "2px", // igual que los otros
+        },
+        listeners: [
+          {
+            type: "click",
+            listener: (ev: Event) => {
+              const rawText = selectedText || "";
+              if (!rawText) return;
+              // Extraer DOI si está presente
+              const doi = doiMatch[0];
+              let url = customPrefix.endsWith("/") ? customPrefix : customPrefix + "/";
+              url += encodeURIComponent(doi);
+              // @ts-ignore
+              ztoolkit.getGlobal("Zotero").launchURL(url);
+              ev.preventDefault();
+            },
+          },
+        ],
+      });
+      append(customButton);
+    }
   }
 
   static getEnabledSearchEngines(): SearchEngine[] {

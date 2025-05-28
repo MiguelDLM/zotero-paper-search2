@@ -17,6 +17,8 @@ declare namespace _ZoteroTypes {
       "searchEngines.jstor": boolean;
       "searchEngines.ieee": boolean;
       "searchEngines.springer": boolean;
+      "searchEngines.google": boolean;
+      "customEngine.prefix": string;
     };
   }
 }

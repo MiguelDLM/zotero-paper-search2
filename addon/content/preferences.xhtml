@@ -12,6 +12,8 @@
     <preference id="searchEngines.jstor" name="extensions.zotero.__addonRef__.searchEngines.jstor" type="bool" />
     <preference id="searchEngines.ieee" name="extensions.zotero.__addonRef__.searchEngines.ieee" type="bool" />
     <preference id="searchEngines.springer" name="extensions.zotero.__addonRef__.searchEngines.springer" type="bool" />
+    <preference id="searchEngines.google" name="extensions.zotero.__addonRef__.searchEngines.google" type="bool" />
+    <preference id="customEngine.prefix" name="extensions.zotero.__addonRef__.customEngine.prefix" type="string" />
   </preferences>
 
   <groupbox>
@@ -84,8 +86,22 @@
               <html:label for="checkbox-springer" data-l10n-id="pref-springer-label" style="font-weight:500;"></html:label>
             </html:td>
           </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-google" preference="searchEngines.google" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-google" style="font-weight:500;">Google (búsqueda web)</html:label>
+            </html:td>
+          </html:tr>
         </html:tbody>
       </html:table>
+      <html:div style="margin-top:24px;">
+        <html:label for="customEnginePrefix" style="font-weight:500;">Motor personalizado:</html:label>
+        <html:input id="customEnginePrefix" type="text" style="width:60%;margin-left:8px;" preference="customEngine.prefix" placeholder="https://buscador.com/" />
+        <br/>
+        <html:span style="font-size:smaller;color:gray;">Introduce la URL base, por ejemplo: https://buscador.com/</html:span>
+      </html:div>
     </vbox>
   </groupbox>
 </prefpane>

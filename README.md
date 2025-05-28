@@ -2,24 +2,26 @@
 
 [![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
 
-A Zotero plugin that provides quick access to multiple academic search engines directly from the PDF reader.
+A Zotero plugin that provides quick access to multiple academic and web search engines directly from the PDF reader, with support for custom search engines and bilingual UI (English/Spanish).
 
 ## Features
 
-- **Multiple Search Engines**: Support for 8 popular academic databases:
-
-  - 📚 **Google Scholar** - Academic papers and citations
-  - 🩺 **PubMed** - Biomedical and life science literature
-  - 🔬 **arXiv** - Preprints in physics, mathematics, computer science
-  - 🧠 **Semantic Scholar** - AI-powered scientific literature search
-  - 🔬 **ResearchGate** - Scientific network and publications
-  - 📖 **JSTOR** - Academic journals and books
-  - ⚡ **IEEE Xplore** - Engineering and technology literature
-  - 📚 **SpringerLink** - Scientific, technical and medical content
-
-- **User-Configurable**: Enable/disable search engines through preferences
-- **Instant Search**: Select text in PDF and search across chosen databases
-- **Multi-language Support**: English and Chinese localizations
+- **Multiple Search Engines**: Instantly search selected text in 9 popular databases and web engines:
+  - 🌍 **Google** – General web search
+  - 📚 **Google Scholar** – Academic papers and citations
+  - 🩺 **PubMed** – Biomedical and life science literature
+  - 🔬 **arXiv** – Preprints in physics, mathematics, computer science
+  - 🧠 **Semantic Scholar** – AI-powered scientific literature search
+  - 🔬 **ResearchGate** – Scientific network and publications
+  - 📖 **JSTOR** – Academic journals and books
+  - ⚡ **IEEE Xplore** – Engineering and technology literature
+  - 📚 **SpringerLink** – Scientific, technical and medical content
+- **Custom Search Engine**: Enter any URL prefix (e.g. `https://mysearch.com/`) in the preferences. When you select a DOI, a button will appear to search using your custom engine (e.g. `https://mysearch.com/10.1234/abcd`).
+- **Smart DOI Detection**: The custom search button only appears when a DOI is detected in the selected text.
+- **User-Configurable**: Enable/disable each search engine in the preferences panel.
+- **Modern UI**: Search engine buttons are shown in a compact, responsive grid (2 per row) for better usability.
+- **Instant Search**: Select text in any PDF and search across your chosen engines with a single click.
+- **Multi-language Support**: English and Spanish localizations. UI language matches your Zotero language.
 
 ## Installation
 
@@ -33,15 +35,15 @@ A Zotero plugin that provides quick access to multiple academic search engines d
 1. Open any PDF in Zotero's PDF reader
 2. Select any text in the PDF
 3. A popup menu will appear with buttons for your enabled search engines
-4. Click any button to search the selected text in that database
+4. Click any button to search the selected text in that database or web engine
+5. If you select a DOI and have set a custom search prefix, a special button will appear to launch your custom search
 
 ## Configuration
 
-Configure which search engines to show:
-
-1. Go to **Zotero → Settings → Paper Search**
-2. In the "Search Engines" section, check/uncheck desired search engines
-3. Changes take effect immediately
+- Go to **Zotero → Settings → Paper Search**
+- In the "Search Engines" section, check/uncheck the engines you want
+- To add a custom search engine, enter its URL prefix (e.g. `https://mysearch.com/`) in the provided field
+- Changes take effect immediately
 
 **Default enabled engines**: Google Scholar, PubMed, arXiv, Semantic Scholar
 

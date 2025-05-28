@@ -5,8 +5,10 @@
 export type FluentMessageId =
   | 'popup-arxiv-label'
   | 'popup-arxiv-tooltip'
+  | 'popup-google-label'
   | 'popup-google-scholar-label'
   | 'popup-google-scholar-tooltip'
+  | 'popup-google-tooltip'
   | 'popup-ieee-label'
   | 'popup-ieee-tooltip'
   | 'popup-jstor-label'
@@ -20,6 +22,7 @@ export type FluentMessageId =
   | 'popup-springer-label'
   | 'popup-springer-tooltip'
   | 'pref-arxiv-label'
+  | 'pref-google-label'
   | 'pref-google-scholar-label'
   | 'pref-help'
   | 'pref-ieee-label'

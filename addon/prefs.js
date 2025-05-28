@@ -11,3 +11,5 @@ pref("searchEngines.researchGate", false);
 pref("searchEngines.jstor", false);
 pref("searchEngines.ieee", false);
 pref("searchEngines.springer", false);
+pref("searchEngines.google", false);
+pref("customEngine.prefix", "");

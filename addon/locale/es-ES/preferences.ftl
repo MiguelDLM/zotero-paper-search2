@@ -1,0 +1,13 @@
+pref-title = Configuración de Paper Search
+pref-help = { $name } Compilación { $version } { $time }
+pref-search-engines-title = Motores de búsqueda
+pref-search-engines-description = Selecciona los motores de búsqueda que aparecerán al seleccionar texto en el lector de PDF:
+pref-google-label = Google - Búsqueda web general
+pref-google-scholar-label = Google Scholar - Artículos académicos y citas
+pref-pubmed-label = PubMed - Literatura biomédica y de ciencias de la vida
+pref-arxiv-label = arXiv - Preprints en física, matemáticas, informática
+pref-semantic-scholar-label = Semantic Scholar - Búsqueda científica potenciada por IA
+pref-research-gate-label = ResearchGate - Red científica y publicaciones
+pref-jstor-label = JSTOR - Revistas y libros académicos
+pref-ieee-label = IEEE Xplore - Literatura en ingeniería y tecnología
+pref-springer-label = SpringerLink - Contenido científico, técnico y médico
