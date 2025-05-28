@@ -1,5 +1,2 @@
-pref-title = Addon Template Example
-pref-enable =
-    .label = Enable
-pref-input = Input
+pref-title = Paper Search Settings
 pref-help = { $name } Build { $version } { $time }

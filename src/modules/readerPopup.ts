@@ -9,7 +9,7 @@ export class ReaderPopupFactory {
         const { reader, doc, params, append } = event;
         const selectedText = params.annotation.text.trim();
         addon.data.selectedText = selectedText;
-        
+
         this.buildGoogleScholarButton(event);
       },
       addon.data.config.addonID,
@@ -58,27 +58,26 @@ export class ReaderPopupFactory {
       }
 
       // Clean and encode the search text
-      const cleanText = selectedText.replace(/\s+/g, ' ').trim();
+      const cleanText = selectedText.replace(/\s+/g, " ").trim();
       const encodedText = encodeURIComponent(cleanText);
-      
+
       // Create Google Scholar URL
       const scholarUrl = `https://scholar.google.com/scholar?q=${encodedText}`;
-      
+
       // Open in default browser
       // @ts-ignore - Zotero global may not be typed
       ztoolkit.getGlobal("Zotero").launchURL(scholarUrl);
-      
+
       ztoolkit.log(`Searching Google Scholar for: "${cleanText}"`);
-      
+
       // Show success message
       new ztoolkit.ProgressWindow(addon.data.config.addonName)
         .createLine({
-          text: `Searching Google Scholar for: "${cleanText.slice(0, 50)}${cleanText.length > 50 ? '...' : ''}"`,
+          text: `Searching Google Scholar for: "${cleanText.slice(0, 50)}${cleanText.length > 50 ? "..." : ""}"`,
           type: "success",
           progress: 100,
         })
         .show();
-        
     } catch (error) {
       ztoolkit.log("Error in Google Scholar search:", error);
       new ztoolkit.ProgressWindow(addon.data.config.addonName)

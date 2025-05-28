@@ -1,24 +1,30 @@
 {
-  "name": "zotero-plugin-template",
+  "name": "zotero-paper-search",
   "type": "module",
-  "version": "3.1.0",
-  "description": "Zotero Plugin Template",
+  "version": "0.1.0",
+  "description": "Zotero Plugin for Paper Search in Google Scholar",
   "config": {
-    "addonName": "Zotero Plugin Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate"
+    "addonName": "Paper Search",
+    "addonID": "papersearch@museovirtualnacional.com",
+    "addonRef": "papersearch",
+    "addonInstance": "PaperSearch",
+    "prefsPrefix": "extensions.zotero.papersearch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-plugin-template.git"
+    "url": "git+https://github.com/migueldlm/zotero-paper-search.git"
   },
   "author": "windingwind",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-plugin-template/issues"
+    "url": "https://github.com/migueldlm/zotero-paper-search/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-plugin-template#readme",
+  "homepage": "https://github.com/migueldlm/zotero-paper-search#readme",
+  "keywords": [
+    "zotero",
+    "plugin",
+    "paper search",
+    "google scholar"
+  ],
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "zotero-plugin serve",
