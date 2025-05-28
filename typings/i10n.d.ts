@@ -13,6 +13,8 @@ export type FluentMessageId =
   | 'menuitem-label'
   | 'menuitem-submenulabel'
   | 'menupopup-label'
+  | 'popup-google-scholar-label'
+  | 'popup-google-scholar-tooltip'
   | 'pref-enable'
   | 'pref-help'
   | 'pref-input'
