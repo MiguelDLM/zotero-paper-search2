@@ -9,6 +9,14 @@ declare namespace _ZoteroTypes {
     PluginPrefsMap: {
       "enable": boolean;
       "input": string;
+      "searchEngines.googleScholar": boolean;
+      "searchEngines.pubmed": boolean;
+      "searchEngines.arxiv": boolean;
+      "searchEngines.semanticScholar": boolean;
+      "searchEngines.researchGate": boolean;
+      "searchEngines.jstor": boolean;
+      "searchEngines.ieee": boolean;
+      "searchEngines.springer": boolean;
     };
   }
 }

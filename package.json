@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/migueldlm/zotero-paper-search.git"
   },
-  "author": "windingwind",
+  "author": "Miguel DLM",
   "bugs": {
     "url": "https://github.com/migueldlm/zotero-paper-search/issues"
   },
@@ -22,8 +22,7 @@
   "keywords": [
     "zotero",
     "plugin",
-    "paper search",
-    "google scholar"
+    "paper search"
   ],
   "license": "AGPL-3.0-or-later",
   "scripts": {

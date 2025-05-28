@@ -1,2 +1,16 @@
 popup-google-scholar-label = 在Google Scholar中搜索
 popup-google-scholar-tooltip = 在Google Scholar中搜索选中的文本
+popup-pubmed-label = 在PubMed中搜索
+popup-pubmed-tooltip = 在PubMed中搜索选中的文本
+popup-arxiv-label = 在arXiv中搜索
+popup-arxiv-tooltip = 在arXiv中搜索选中的文本
+popup-semantic-scholar-label = 在Semantic Scholar中搜索
+popup-semantic-scholar-tooltip = 在Semantic Scholar中搜索选中的文本
+popup-research-gate-label = 在ResearchGate中搜索
+popup-research-gate-tooltip = 在ResearchGate中搜索选中的文本
+popup-jstor-label = 在JSTOR中搜索
+popup-jstor-tooltip = 在JSTOR中搜索选中的文本
+popup-ieee-label = 在IEEE Xplore中搜索
+popup-ieee-tooltip = 在IEEE Xplore中搜索选中的文本
+popup-springer-label = 在SpringerLink中搜索
+popup-springer-tooltip = 在SpringerLink中搜索选中的文本

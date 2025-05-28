@@ -1,2 +1,12 @@
 pref-title = 论文搜索设置
 pref-help = { $name } Build { $version } { $time }
+pref-search-engines-title = 搜索引擎
+pref-search-engines-description = 选择在PDF阅读器中选择文本时在上下文菜单中显示的搜索引擎：
+pref-google-scholar-label = Google Scholar - 学术论文和引用
+pref-pubmed-label = PubMed - 生物医学和生命科学文献
+pref-arxiv-label = arXiv - 物理、数学、计算机科学预印本
+pref-semantic-scholar-label = Semantic Scholar - AI驱动的科学文献搜索
+pref-research-gate-label = ResearchGate - 科研网络和出版物
+pref-jstor-label = JSTOR - 学术期刊和图书
+pref-ieee-label = IEEE Xplore - 工程和技术文献
+pref-springer-label = SpringerLink - 科学、技术和医学内容

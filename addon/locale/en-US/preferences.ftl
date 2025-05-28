@@ -1,2 +1,12 @@
 pref-title = Paper Search Settings
 pref-help = { $name } Build { $version } { $time }
+pref-search-engines-title = Search Engines
+pref-search-engines-description = Select which search engines to show in the context menu when text is selected in the PDF reader:
+pref-google-scholar-label = Google Scholar - Academic papers and citations
+pref-pubmed-label = PubMed - Biomedical and life science literature
+pref-arxiv-label = arXiv - Preprints in physics, mathematics, computer science
+pref-semantic-scholar-label = Semantic Scholar - AI-powered scientific literature search
+pref-research-gate-label = ResearchGate - Scientific network and publications
+pref-jstor-label = JSTOR - Academic journals and books
+pref-ieee-label = IEEE Xplore - Engineering and technology literature
+pref-springer-label = SpringerLink - Scientific, technical and medical content

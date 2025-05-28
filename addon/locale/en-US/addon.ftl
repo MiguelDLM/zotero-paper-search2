@@ -1,2 +1,16 @@
 popup-google-scholar-label = Search in Google Scholar
 popup-google-scholar-tooltip = Search the selected text in Google Scholar
+popup-pubmed-label = Search in PubMed
+popup-pubmed-tooltip = Search the selected text in PubMed
+popup-arxiv-label = Search in arXiv
+popup-arxiv-tooltip = Search the selected text in arXiv
+popup-semantic-scholar-label = Search in Semantic Scholar
+popup-semantic-scholar-tooltip = Search the selected text in Semantic Scholar
+popup-research-gate-label = Search in ResearchGate
+popup-research-gate-tooltip = Search the selected text in ResearchGate
+popup-jstor-label = Search in JSTOR
+popup-jstor-tooltip = Search the selected text in JSTOR
+popup-ieee-label = Search in IEEE Xplore
+popup-ieee-tooltip = Search the selected text in IEEE Xplore
+popup-springer-label = Search in SpringerLink
+popup-springer-tooltip = Search the selected text in SpringerLink

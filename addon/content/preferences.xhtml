@@ -1,12 +1,95 @@
 <linkset>
   <html:link rel="localization" href="__addonRef__-preferences.ftl" />
 </linkset>
-<groupbox
-  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });"
->
-  <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
-</groupbox>
-<vbox>
+
+<prefpane id="papersearch-prefs" onpaneload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });">
+  <preferences>
+    <preference id="searchEngines.googleScholar" name="extensions.zotero.__addonRef__.searchEngines.googleScholar" type="bool" />
+    <preference id="searchEngines.pubmed" name="extensions.zotero.__addonRef__.searchEngines.pubmed" type="bool" />
+    <preference id="searchEngines.arxiv" name="extensions.zotero.__addonRef__.searchEngines.arxiv" type="bool" />
+    <preference id="searchEngines.semanticScholar" name="extensions.zotero.__addonRef__.searchEngines.semanticScholar" type="bool" />
+    <preference id="searchEngines.researchGate" name="extensions.zotero.__addonRef__.searchEngines.researchGate" type="bool" />
+    <preference id="searchEngines.jstor" name="extensions.zotero.__addonRef__.searchEngines.jstor" type="bool" />
+    <preference id="searchEngines.ieee" name="extensions.zotero.__addonRef__.searchEngines.ieee" type="bool" />
+    <preference id="searchEngines.springer" name="extensions.zotero.__addonRef__.searchEngines.springer" type="bool" />
+  </preferences>
+
+  <groupbox>
+    <label><html:h3 data-l10n-id="pref-search-engines-title"></html:h3></label>
+    <vbox>
+      <html:label data-l10n-id="pref-search-engines-description"></html:label>
+      <html:table style="width:100%;border-collapse:separate;border-spacing:0 8px;">
+        <html:tbody>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-googleScholar" preference="searchEngines.googleScholar" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-googleScholar" data-l10n-id="pref-google-scholar-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-pubmed" preference="searchEngines.pubmed" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-pubmed" data-l10n-id="pref-pubmed-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-arxiv" preference="searchEngines.arxiv" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-arxiv" data-l10n-id="pref-arxiv-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-semanticScholar" preference="searchEngines.semanticScholar" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-semanticScholar" data-l10n-id="pref-semantic-scholar-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-researchGate" preference="searchEngines.researchGate" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-researchGate" data-l10n-id="pref-research-gate-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-jstor" preference="searchEngines.jstor" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-jstor" data-l10n-id="pref-jstor-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-ieee" preference="searchEngines.ieee" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-ieee" data-l10n-id="pref-ieee-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+          <html:tr>
+            <html:td style="width:32px;text-align:center;vertical-align:middle;">
+              <html:input type="checkbox" id="checkbox-springer" preference="searchEngines.springer" />
+            </html:td>
+            <html:td style="vertical-align:middle;">
+              <html:label for="checkbox-springer" data-l10n-id="pref-springer-label" style="font-weight:500;"></html:label>
+            </html:td>
+          </html:tr>
+        </html:tbody>
+      </html:table>
+    </vbox>
+  </groupbox>
+</prefpane>
+<vbox style="margin-top: 32px;">
   <html:label
     data-l10n-id="pref-help"
     data-l10n-args='{"time": "__buildTime__","name": "__addonName__","version":"__buildVersion__"}'
