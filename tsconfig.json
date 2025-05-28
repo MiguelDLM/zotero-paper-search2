@@ -1,4 +1,14 @@
 {
+  "compilerOptions": {
+    "types": ["zotero-types"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": false
+  },
   "include": ["src", "typings"],
-  "exclude": ["build", "addon"]
+  "exclude": ["build", "addon", "node_modules/@types"]
 }
