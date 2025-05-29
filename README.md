@@ -2,7 +2,9 @@
 
 [![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
 [![Using Zotero Plugin Template](https://img.shields.io/badge/Using-Zotero%20Plugin%20Template-blue?style=flat-square&logo=github)](https://github.com/windingwind/zotero-plugin-template)
-![Downloads](https://img.shields.io/github/downloads/MiguelDLM/zotero-paper-search/total)
+[![License](https://img.shields.io/github/license/MiguelDLM/BFEX.svg)](https://github.com/MiguelDLM/BFEX/blob/main/LICENSE)
+[![Github All Releases](https://img.shields.io/github/downloads/MiguelDLM/zotero-paper-search/total.svg)](https://github.com/MiguelDLM/zotero-paper-search/releases)
+
 
 A Zotero plugin that provides quick access to multiple academic and web search engines directly from the PDF reader, with support for custom search engines and bilingual UI (English/Spanish).
 
