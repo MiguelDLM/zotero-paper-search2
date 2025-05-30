@@ -137,7 +137,9 @@ export class ReaderPopupFactory {
 
     // Motor personalizado SOLO si hay DOI
     const customPrefix = getPref("customEngine.prefix");
-    const doiMatch = (selectedText || "").match(/10\.[0-9]{4,9}\/[\w.()\-;\/:%]+/i);
+    const doiMatch = (selectedText || "").match(
+      /10\.[0-9]{4,9}\/[\w.()\-;/:%]+/i,
+    );
     if (customPrefix && customPrefix.trim() && doiMatch) {
       const customButton = ztoolkit.UI.createElement(doc, "button", {
         namespace: "html",
@@ -158,9 +160,11 @@ export class ReaderPopupFactory {
               if (!rawText) return;
               // Extraer DOI si está presente
               const doi = doiMatch[0];
-              let url = customPrefix.endsWith("/") ? customPrefix : customPrefix + "/";
+              let url = customPrefix.endsWith("/")
+                ? customPrefix
+                : customPrefix + "/";
               url += encodeURIComponent(doi);
-              // @ts-ignore
+              // @ts-ignore Zotero API is not typed but is available globally
               ztoolkit.getGlobal("Zotero").launchURL(url);
               ev.preventDefault();
             },

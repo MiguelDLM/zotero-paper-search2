@@ -13,7 +13,7 @@ export async function registerPrefsScripts(_window: Window) {
   } else {
     addon.data.prefs.window = _window;
   }
-  
+
   await updatePrefsUI();
   bindPrefEvents();
 }
@@ -22,20 +22,25 @@ async function updatePrefsUI() {
   // Initialize search engine preferences if they don't exist
   const renderLock = ztoolkit.getGlobal("Zotero").Promise.defer();
   if (addon.data.prefs?.window == undefined) return;
-  
+
   // Ensure all search engine preferences have default values
   SEARCH_ENGINES.forEach((engine) => {
     const prefKey = `searchEngines.${engine.id}` as any;
     const currentValue = getPref(prefKey);
-    
+
     // If preference doesn't exist, set default based on prefs.js
     if (currentValue === undefined) {
       // Default enabled engines
-      const defaultEnabled = ["googleScholar", "pubmed", "arxiv", "semanticScholar"];
+      const defaultEnabled = [
+        "googleScholar",
+        "pubmed",
+        "arxiv",
+        "semanticScholar",
+      ];
       setPref(prefKey, defaultEnabled.includes(engine.id));
     }
   });
-  
+
   renderLock.resolve();
 }
 

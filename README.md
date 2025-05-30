@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/github/license/MiguelDLM/BFEX.svg)](https://github.com//MiguelDLM/zotero-paper-search/blob/main/LICENSE)
 [![Github All Releases](https://img.shields.io/github/downloads/MiguelDLM/zotero-paper-search/total.svg)](https://github.com/MiguelDLM/zotero-paper-search/releases)
 
-
 A Zotero plugin that provides quick access to multiple academic and web search engines directly from the PDF reader, with support for custom search engines and bilingual UI (English/Spanish).
 
 ## Features
