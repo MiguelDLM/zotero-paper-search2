@@ -33,4 +33,5 @@ export type FluentMessageId =
   | 'pref-search-engines-title'
   | 'pref-semantic-scholar-label'
   | 'pref-springer-label'
-  | 'pref-title';
+  | 'pref-title'
+  | 'pref-where-is-my-fossil-label';

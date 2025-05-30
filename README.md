@@ -21,6 +21,7 @@ A Zotero plugin that provides quick access to multiple academic and web search e
   - 📖 **JSTOR** – Academic journals and books
   - ⚡ **IEEE Xplore** – Engineering and technology literature
   - 📚 **SpringerLink** – Scientific, technical and medical content
+  - 🦕 **Where is My Fossil?** – Search for species in Where is My Fossil?
 - **Custom Search Engine**: Enter any URL prefix (e.g. `https://mysearch.com/`) in the preferences. When you select a DOI, a button will appear to search using your custom engine (e.g. `https://mysearch.com/10.1234/abcd`).
 - **Smart DOI Detection**: The custom search button only appears when a DOI is detected in the selected text.
 - **User-Configurable**: Enable/disable each search engine in the preferences panel.

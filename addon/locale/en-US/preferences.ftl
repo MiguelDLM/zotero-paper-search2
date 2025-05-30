@@ -10,3 +10,5 @@ pref-research-gate-label = ResearchGate - Scientific network and publications
 pref-jstor-label = JSTOR - Academic journals and books
 pref-ieee-label = IEEE Xplore - Engineering and technology literature
 pref-springer-label = SpringerLink - Scientific, technical and medical content
+pref-google-label = Google - General web search
+pref-where-is-my-fossil-label = Where is my fossil? - Fossil and paleontological species search

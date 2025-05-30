@@ -18,6 +18,7 @@ declare namespace _ZoteroTypes {
       "searchEngines.ieee": boolean;
       "searchEngines.springer": boolean;
       "searchEngines.google": boolean;
+      "searchEngines.whereIsMyFossil": boolean;
       "customEngine.prefix": string;
     };
   }

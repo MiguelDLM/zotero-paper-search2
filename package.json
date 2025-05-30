@@ -26,7 +26,8 @@
   ],
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "zotero-plugin serve",
+    "setup": "node scripts/setup-env.cjs",
+    "start": "ZOTERO_PLUGIN_ZOTERO_BIN_PATH=/usr/bin/zotero ./node_modules/.bin/zotero-plugin serve",
     "build": "zotero-plugin build && tsc --noEmit",
     "lint:check": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",

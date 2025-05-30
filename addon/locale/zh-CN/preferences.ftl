@@ -10,3 +10,4 @@ pref-research-gate-label = ResearchGate - 科研网络和出版物
 pref-jstor-label = JSTOR - 学术期刊和图书
 pref-ieee-label = IEEE Xplore - 工程和技术文献
 pref-springer-label = SpringerLink - 科学、技术和医学内容
+pref-where-is-my-fossil-label = Where is my fossil? - 化石和古生物物种搜索

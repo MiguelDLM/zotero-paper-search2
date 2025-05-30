@@ -74,6 +74,13 @@ export const SEARCH_ENGINES: SearchEngine[] = [
     icon: "📚",
     description: "Scientific, technical and medical content",
   },
+  {
+    id: "whereIsMyFossil",
+    name: "Where is my fossil?",
+    url: "https://migueldlm.github.io/Where-is-my-fossil/?taxon={{query}}",
+    icon: "🦕",
+    description: "Fossil and paleontological species search",
+  },
 ];
 
 export class ReaderPopupFactory {
@@ -92,6 +99,40 @@ export class ReaderPopupFactory {
     );
   }
 
+  /**
+   * Clean and validate text for "Where is my fossil?" search
+   * @param text - The selected text to clean
+   * @returns Object with cleaned text and whether it's valid for WIMF
+   */
+  static cleanAndValidateForWIMF(text: string): { cleanedText: string; isValid: boolean } {
+    if (!text || !text.trim()) {
+      return { cleanedText: "", isValid: false };
+    }
+
+    let cleaned = text.trim();
+
+    // Remove special characters from the beginning (e.g., "(Equus asinus" → "Equus asinus")
+    cleaned = cleaned.replace(/^[^\w\s]+/, "");
+
+    // Remove special characters from the end
+    cleaned = cleaned.replace(/[^\w\s]+$/, "");
+
+    // Handle hyphenated words (e.g., "Equus as-inus" → "Equus asinus")
+    cleaned = cleaned.replace(/(\w)-\s*(\w)/g, "$1$2");
+
+    // Clean up multiple spaces
+    cleaned = cleaned.replace(/\s+/g, " ").trim();
+
+    // Count words (split by whitespace)
+    const words = cleaned.split(/\s+/).filter(word => word.length > 0);
+
+    // Only valid if 1-2 words and each word is at least 2 characters
+    const isValid = words.length >= 1 && words.length <= 2 &&
+      words.every(word => word.length >= 2 && /^[a-zA-Z]+$/.test(word));
+
+    return { cleanedText: cleaned, isValid };
+  }
+
   static buildSearchButtons(event: any) {
     const { reader, doc, append } = event;
     const selectedText = addon.data.selectedText;
@@ -104,12 +145,26 @@ export class ReaderPopupFactory {
       enabledEngines.push(SEARCH_ENGINES[0]);
     }
 
+    // Check if "Where is my fossil?" should be shown and get cleaned text
+    const wimfValidation = this.cleanAndValidateForWIMF(selectedText || "");
+
+    // Filter engines based on validation
+    const filteredEngines = enabledEngines.filter(engine => {
+      if (engine.id === "whereIsMyFossil") {
+        return wimfValidation.isValid;
+      }
+      return true;
+    });
+
     // Create unique ID for this reader instance
     const makeId = (type: string) =>
       `${addon.data.config.addonRef}-${reader._instanceID}-${type}`;
 
-    // Add button for each enabled search engine
-    enabledEngines.forEach((engine, index) => {
+    // Add button for each filtered search engine
+    filteredEngines.forEach((engine, index) => {
+      // Use cleaned text for WIMF, original text for others
+      const searchText = engine.id === "whereIsMyFossil" ? wimfValidation.cleanedText : selectedText;
+
       append(
         ztoolkit.UI.createElement(doc, "button", {
           namespace: "html",
@@ -126,7 +181,7 @@ export class ReaderPopupFactory {
             {
               type: "click",
               listener: (ev: Event) => {
-                this.searchInEngine(engine, selectedText || "");
+                this.searchInEngine(engine, searchText || "");
                 ev.preventDefault();
               },
             },
@@ -195,8 +250,17 @@ export class ReaderPopupFactory {
         return;
       }
 
-      // Clean and encode the search text
-      const cleanText = selectedText.replace(/\s+/g, " ").trim();
+      // For WIMF, the text should already be cleaned, but for others, clean normally
+      let cleanText: string;
+      if (engine.id === "whereIsMyFossil") {
+        // Text should already be cleaned and validated
+        cleanText = selectedText.trim();
+        ztoolkit.log(`WIMF search with cleaned text: "${cleanText}"`);
+      } else {
+        // Normal cleaning for other engines
+        cleanText = selectedText.replace(/\s+/g, " ").trim();
+      }
+
       const encodedText = encodeURIComponent(cleanText);
 
       // Create search URL by replacing the query placeholder
@@ -207,15 +271,6 @@ export class ReaderPopupFactory {
       ztoolkit.getGlobal("Zotero").launchURL(searchUrl);
 
       ztoolkit.log(`Searching ${engine.name} for: "${cleanText}"`);
-
-      // Show success message
-      new ztoolkit.ProgressWindow(addon.data.config.addonName)
-        .createLine({
-          text: `Searching ${engine.name} for: "${cleanText.slice(0, 50)}${cleanText.length > 50 ? "..." : ""}"`,
-          type: "success",
-          progress: 100,
-        })
-        .show();
     } catch (error) {
       ztoolkit.log(`Error in ${engine.name} search:`, error);
       new ztoolkit.ProgressWindow(addon.data.config.addonName)

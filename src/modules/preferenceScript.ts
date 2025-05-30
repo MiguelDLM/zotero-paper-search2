@@ -36,6 +36,7 @@ async function updatePrefsUI() {
         "pubmed",
         "arxiv",
         "semanticScholar",
+        "whereIsMyFossil",
       ];
       setPref(prefKey, defaultEnabled.includes(engine.id));
     }
