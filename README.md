@@ -10,6 +10,8 @@ A Zotero plugin that provides quick access to multiple academic and web search e
 
 ## Features
 
+![Zotero Paper Search menu](./Screenshot.png)
+
 - **Multiple Search Engines**: Instantly search selected text in 9 popular databases and web engines:
   - 🌍 **Google** – General web search
   - 📚 **Google Scholar** – Academic papers and citations
