@@ -104,7 +104,10 @@ export class ReaderPopupFactory {
    * @param text - The selected text to clean
    * @returns Object with cleaned text and whether it's valid for WIMF
    */
-  static cleanAndValidateForWIMF(text: string): { cleanedText: string; isValid: boolean } {
+  static cleanAndValidateForWIMF(text: string): {
+    cleanedText: string;
+    isValid: boolean;
+  } {
     if (!text || !text.trim()) {
       return { cleanedText: "", isValid: false };
     }
@@ -124,11 +127,13 @@ export class ReaderPopupFactory {
     cleaned = cleaned.replace(/\s+/g, " ").trim();
 
     // Count words (split by whitespace)
-    const words = cleaned.split(/\s+/).filter(word => word.length > 0);
+    const words = cleaned.split(/\s+/).filter((word) => word.length > 0);
 
     // Only valid if 1-2 words and each word is at least 2 characters
-    const isValid = words.length >= 1 && words.length <= 2 &&
-      words.every(word => word.length >= 2 && /^[a-zA-Z]+$/.test(word));
+    const isValid =
+      words.length >= 1 &&
+      words.length <= 2 &&
+      words.every((word) => word.length >= 2 && /^[a-zA-Z]+$/.test(word));
 
     return { cleanedText: cleaned, isValid };
   }
@@ -149,7 +154,7 @@ export class ReaderPopupFactory {
     const wimfValidation = this.cleanAndValidateForWIMF(selectedText || "");
 
     // Filter engines based on validation
-    const filteredEngines = enabledEngines.filter(engine => {
+    const filteredEngines = enabledEngines.filter((engine) => {
       if (engine.id === "whereIsMyFossil") {
         return wimfValidation.isValid;
       }
@@ -163,7 +168,10 @@ export class ReaderPopupFactory {
     // Add button for each filtered search engine
     filteredEngines.forEach((engine, index) => {
       // Use cleaned text for WIMF, original text for others
-      const searchText = engine.id === "whereIsMyFossil" ? wimfValidation.cleanedText : selectedText;
+      const searchText =
+        engine.id === "whereIsMyFossil"
+          ? wimfValidation.cleanedText
+          : selectedText;
 
       append(
         ztoolkit.UI.createElement(doc, "button", {
